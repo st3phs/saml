@@ -81,7 +81,7 @@ def DecryptAssertion(data, verbose=False):
 
     # Decrypt Assertion
     assertion = AESDecrypt(shared_key, base64.b64decode(enc_assertion_cipher))
-    print(assertion)
+    print('%s' % assertion)
 
 def GetAssertion(response):
     """ 
