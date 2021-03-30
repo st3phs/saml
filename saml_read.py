@@ -93,7 +93,7 @@ def GetAssertion(response):
     if response.startswith('PHNhbWxwOlJlc3BvbnNlIE'):
         # add three '=' to the response to avoid incorrect padding
         assertion = base64.b64decode(unquote(response + '==='))
-    elif response.find('<samlp:Response') > 0:
+    elif response.find('<samlp:Response') != -1:
         assertion = response
     else:
         sys.exit('Invalid SAML response')
